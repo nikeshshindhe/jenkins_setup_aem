@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Modal Popup Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+               jcr:primaryType="nt:unstructured"
+               sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+               margin="{Boolean}true">
+               <items jcr:primaryType="nt:unstructured">
+                   <column
+                       jcr:primaryType="nt:unstructured"
+                       sling:resourceType="granite/ui/components/coral/foundation/container">
+                       <items jcr:primaryType="nt:unstructured">
+                           <modalId
+			                   jcr:primaryType="nt:unstructured"
+							   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+			                   fieldLabel="Modal Popup ID"
+                             	required="{Boolean}true"
+                             	validation="foundation.jcr.name"
+                   				name="./modalId"/>
+                			<modalSize
+                               jcr:primaryType="nt:unstructured"
+                               sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                               fieldDescription="Popup Modal Size"
+                               fieldLabel="Modal Size"
+                               name="./modalSize">
+                               <items jcr:primaryType="nt:unstructured">
+                                   <modalxl
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Extra large"
+                                       value="modal-xl"/>
+                                   <modallg
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Large size"
+                                       value="modal-lg"/>
+                                   <modalmd
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Medium size"
+                                       value="modal-md"/>	
+                           		</items>
+                           </modalSize>
+                           <modalContentType
+                               granite:class="cq-dialog-dropdown-showhide"
+                               jcr:primaryType="nt:unstructured"
+                               sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                               fieldLabel="Select Modal Content Type"
+                               name="./modalContentType">
+                               <granite:data
+                                   jcr:primaryType="nt:unstructured"
+                                   cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                               <items jcr:primaryType="nt:unstructured">
+                                   <experienceFragment
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Experience Fragment"
+                                       value="experience-fragment"/>
+                                   <textContent
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Text Content"
+                                       value="text-content"/>
+                               </items>
+                           </modalContentType>
+                           <setExperienceFragment
+                               granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                               jcr:primaryType="nt:unstructured"
+                               sling:resourceType="granite/ui/components/coral/foundation/container">
+                               <granite:data
+                                   jcr:primaryType="nt:unstructured"
+                                   showhidetargetvalue="experience-fragment"/>
+                               <items jcr:primaryType="nt:unstructured">
+		                           <fragmentPath
+		                               jcr:primaryType="nt:unstructured"
+		                               sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+		                               fieldLabel="Modal Content Fragment Path"
+		                               name="./fragmentPath"
+		                               rootPath="/content/experience-fragments"/>
+                               </items>
+                           </setExperienceFragment>
+                           <setTextContent
+                               granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                               jcr:primaryType="nt:unstructured"
+                               sling:resourceType="granite/ui/components/coral/foundation/container">
+                               <granite:data
+                                   jcr:primaryType="nt:unstructured"
+                                   showhidetargetvalue="text-content"/>
+                               <items jcr:primaryType="nt:unstructured">
+		                           <title
+		                               jcr:primaryType="nt:unstructured"
+		                               sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+		                               fieldLabel="Modal Popup Title"
+		                               name="./title"/>
+		                           <text
+		                                jcr:primaryType="nt:unstructured"
+		                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+		                                name="./text"
+		                               fieldLabel="Modal Popup Content"
+		                                useFixedInlineToolbar="{Boolean}true">
+		                                <rtePlugins
+		                                    jcr:primaryType="nt:unstructured"
+		                                    sling:resourceSuperType="/apps/loyaltydemo/components/content/custom/rte/standardrteplugins/rteplugins"/>
+		                                <uiSettings
+		                                    jcr:primaryType="nt:unstructured"
+		                                    sling:resourceSuperType="/apps/loyaltydemo/components/content/custom/rte/standardrteplugins/uisettings"/>
+		                            </text>   
+                               </items>
+                           </setTextContent>
+                       </items>
+                   </column>
+               </items>
+           </columns>
+        </items>
+    </content>
+</jcr:root>

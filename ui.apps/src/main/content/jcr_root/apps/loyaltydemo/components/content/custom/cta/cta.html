@@ -1,0 +1,6 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure CTA Component" class="cq-placeholder"></div>
+<sly data-sly-use.ctaInstance="com.rnd.loyaltydemo.core.models.CTAModel"/>
+<sly data-sly-test.ctaClass="btn ${ctaInstance.ctaType || 'btn-primary'}"/>
+<sly data-sly-use.ctaUtil="cta-link-util.html">
+    <sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=ctaInstance.ctaLabel, ctaLink=ctaInstance.ctaLink, ctaClass=ctaClass, ctaTarget=ctaInstance.ctaTarget}" ></sly>
+</sly>

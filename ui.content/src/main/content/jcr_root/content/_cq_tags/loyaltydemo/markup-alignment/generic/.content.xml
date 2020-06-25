@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description=""
+    jcr:primaryType="cq:Tag"
+    jcr:title="Generic"
+    sling:resourceType="cq/tagging/components/tag">
+    <align-h-right-d/>
+    <align-h-center-d/>
+    <align-h-left-d/>
+    <align-v-top-d/>
+    <align-v-center-d/>
+    <align-v-bottom-d/>
+</jcr:root>

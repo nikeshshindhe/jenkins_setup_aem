@@ -1,0 +1,26 @@
+<div data-sly-test="${wcmmode.edit}"
+	data-emptytext="Configure Social Login Component"
+	class="cq-placeholder"></div>
+
+<div class="registerlogin__social">
+	<sly data-sly-test="${properties.showFacebook}">
+	<button class="facebook btn">
+		<i class="fa fa-facebook"></i>${properties.facebookLabel || 'Login with Facebook'}
+	</button>
+	</sly>
+	<sly data-sly-test="${properties.showTwitter}">
+	<button class="twitter btn">
+		<i class="fa fa-twitter"></i>${properties.twitterLabel || 'Login with Twitter'}
+	</button>
+	</sly>
+
+	<sly data-sly-test="${properties.showGoogle}">
+	<button class="google btn">
+		<i class="fa fa-google"></i>${properties.googleLabel || 'Login with Google'}
+	</button>
+	</sly>
+
+</div>
+<sly data-sly-test="${properties.showDivider}">
+<div class="registerlogin__divider">${properties.dividerLabel || 'OR'}</div>
+</sly>

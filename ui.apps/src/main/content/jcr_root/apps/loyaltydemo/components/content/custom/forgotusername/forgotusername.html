@@ -1,0 +1,35 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Forgot UserName Component" class="cq-placeholder"></div>
+<sly data-sly-use.forgotusernameModel="com.rnd.loyaltydemo.core.models.ForgotUsernameModel"/>
+<section class="forgot-username">
+            <div class="forgot-username__inner">
+                <div class="forgot-username__desc">
+                    ${forgotusernameModel.heading @context='html'}
+                </div>
+                <div class="forgot-username__form generic__form--elements">
+                    <form id="forgotUsername" class="forgot-username-form" method="POST">
+                        <div class="form-group">
+                            <label for="email">${forgotusernameModel.emailAddressLabel}</label>
+                            <input type="email" class="form-control" id="email" name="email" data-error="${forgotusernameModel.emailMissing}" data-pattern="${forgotusernameModel.emailFormat}">
+                        </div>
+                        <div class="generic__login__signupbtn">
+                            <button type="submit" class="btn ${(forgotusernameModel.forgotUsernameCta && forgotusernameModel.forgotUsernameCta.ctaType) || 'btn-primary'}">${(forgotusernameModel.forgotUsernameCta && forgotusernameModel.forgotUsernameCta.ctaLabel) || 'SUBMIT'}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- success or failure message  -->
+            <div class="register__success d-none">
+                <div class="register__successmsg">
+                  ${forgotusernameModel.completionHeading @context='html'}
+                </div>
+                <div class="generic__login__signupbtn">
+                <sly data-sly-use.ctaUtil="/apps/loyaltydemo/components/content/custom/cta/cta-link-util.html">
+    				<sly data-sly-test.ctaClass="btn ${(forgotusernameModel.completionCta && forgotusernameModel.completionCta.ctaType) || 'btn-primary'}"/>
+    				<sly data-sly-test.ctaLabel="${(forgotusernameModel.completionCta && forgotusernameModel.completionCta.ctaLabel) || 'CONTINUE'}"/>
+    				<sly data-sly-test.ctaLink="${forgotusernameModel.loginPagePath || '#'}"/>
+    				<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=ctaLabel, ctaLink=ctaLink, ctaClass=ctaClass}" ></sly>
+				</sly>
+                </div>
+            </div>
+            <!-- success or failure message end -->
+        </section>

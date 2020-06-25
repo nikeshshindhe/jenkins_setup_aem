@@ -1,0 +1,40 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Column Container Component" class="cq-placeholder"></div>
+<sly data-sly-test.visible="${wcmmode.edit || wcmmode.preview  || (properties.visibility == '2')  ||  (properties.visibility =='3')  || (properties.visibility =='4') }">
+<sly data-sly-use.columnContainerModel="com.rnd.loyaltydemo.core.models.ColumnContainerModel"></sly>
+<sly data-sly-test.bgtag="${(properties.backgroundcolor || properties.fileReference) ? 'background :' : ''}"/>
+<sly data-sly-test.classValue=""/>
+<sly data-sly-test="${properties.visibility =='3'}">
+	<sly data-sly-test.classValue="auth-only d-none"/>
+</sly>
+<sly data-sly-test="${properties.visibility =='4'}">
+	<sly data-sly-test.classValue="unauth-only d-none"/>
+</sly>
+<sly data-sly-test.bgValue=""/>
+<sly data-sly-test="${properties.backgroundcolor}">
+	<sly data-sly-test.bgValue="background : ${properties.backgroundcolor}"/>
+</sly>
+<sly data-sly-test="${properties.fileReference}">
+	<sly data-sly-test.bgValue="background : url(${properties.fileReference})"/>
+</sly>
+<sly data-sly-test.containerBgValue=""/>
+<sly data-sly-test="${properties.containerBackgroundcolor}">
+	<sly data-sly-test.containerBgValue="background : ${properties.containerBackgroundcolor}"/>
+</sly>
+<sly data-sly-test="${properties.containerFileReference}">
+	<sly data-sly-test.containerBgValue="background : url(${properties.containerFileReference})"/>
+</sly>
+<section class="sectionwrapper ${wcmmode.edit || wcmmode.preview ? '' : classValue}" style="${bgValue @context='styleString'}">
+	<div class="container ${columnContainerModel.containerClassStr}" style="${containerBgValue @context='styleString'}">
+		<div class="row">
+		 <div class="${properties.equalHeightColumns ? 'd-flex' : ''}" data-sly-unwrap="${!properties.equalHeightColumns}">
+			<sly>
+				<sly data-sly-use.columnLayoutTemplate="columnparsys.html">
+                     <sly data-sly-call="${columnLayoutTemplate.columnLayout @ columnContainerModel=columnContainerModel}" ></sly>
+                  </sly>
+			</sly>
+			</div>
+		</div>
+	</div>
+</section>
+</sly>
+

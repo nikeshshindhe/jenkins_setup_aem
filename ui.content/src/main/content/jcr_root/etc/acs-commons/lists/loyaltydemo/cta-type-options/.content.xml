@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        cq:lastModified="{Date}2020-05-26T19:39:56.901+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/acs-commons/templates/utilities/genericlist"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="CTA Type Options"
+        sling:resourceType="acs-commons/components/utilities/genericlist">
+        <list jcr:primaryType="nt:unstructured">
+            <item0
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Primary CTA"
+                value="btn-primary"/>
+            <item1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Secondary CTA"
+                value="btn-secondary"/>
+            <item2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Outline CTA 1"
+                value="btn-outline"/>
+            <item3
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Outline CTA 2"
+                value="btn-outline2"/>
+            <item4
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Link CTA"
+                value="btn-link"/>
+        </list>
+    </jcr:content>
+</jcr:root>

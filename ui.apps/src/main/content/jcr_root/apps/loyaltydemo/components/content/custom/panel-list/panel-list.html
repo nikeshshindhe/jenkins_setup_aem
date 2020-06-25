@@ -1,0 +1,21 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Panel List Component" class="cq-placeholder"></div>
+<sly data-sly-use.panelInstance="com.rnd.loyaltydemo.core.models.PanelListModel"/>
+<sly data-sly-use.ctaUtil="/apps/loyaltydemo/components/content/custom/cta/cta-link-util.html"/>
+<section class="profile-info">
+    <div class="profile__title">
+        ${properties.heading @context='html'}
+        <ul class="profile__list">
+            <sly data-sly-test.panelItems="${panelInstance.panelList}" data-sly-list="${panelItems}">
+                <li class="profile__list__item">
+                    <div class="profile__prop">
+                        ${item.label @context='html'}
+                    </div>
+					<div class="profile__edit">
+                    	${item.text @context='html'}
+                        <sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=item.ctaLabel, ctaLink=item.ctaLink, ctaClass=(item.ctaType || 'btn-link'), ctaTarget=item.ctaTarget}"/>
+                    </div>
+                </li>
+            </sly>
+        </ul>
+    </div>
+</section>

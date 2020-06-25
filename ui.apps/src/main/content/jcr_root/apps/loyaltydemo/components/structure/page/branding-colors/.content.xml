@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container"
+    margin="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                    <accordian
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                        margin="{Boolean}false"
+                                        maximized="{Boolean}true"
+                                        multiple="{Boolean}true"
+                                        variant="quiet">
+                                        <items jcr:primaryType="nt:unstructured">
+										    <header
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Header Style Properties"
+                                                sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                                margin="{Boolean}false"
+                                                maximized="{Boolean}true"
+                                                multiple="{Boolean}true"
+                                                variant="quiet">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <mainheader
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Main Nav Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <mainNavBgColor
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+																fieldLabel="Main Nav BG Color"
+																name="./branding-wizard/mainNavBgColor"/>
+															<mainNavTextColor
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+																fieldLabel="Main Nav Text Color"
+																name="./branding-wizard/mainNavTextColor"/>
+														</items>
+                                                    </mainheader>                                                   
+													<userNavigation
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="User Nav Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <userNavBgColor
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+																fieldLabel="User Nav BG Color"
+																name="./branding-wizard/userNavBgColor"/>
+															<userNavTextColor
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+																fieldLabel="User Nav Text Color"
+																name="./branding-wizard/userNavTextColor"/>
+                                                        </items>
+                                                    </userNavigation>
+													<hoverColors
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Hover Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <hoverActiveBGColor
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+																fieldLabel="Hover Active BG Color"
+																name="./branding-wizard/hoverActiveBGColor"/>
+															<hoverActiveTextColor
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+																fieldLabel="Hover Active Text Color"
+																name="./branding-wizard/hoverActiveTextColor"/>
+                                                        </items>
+                                                    </hoverColors>
+													<dropDownMenu
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Drop Down Menu Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <dropdownBGColor
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+																fieldLabel="Drop Down BG Color"
+																name="./branding-wizard/dropdownBGColor"/>
+															<dropdownTextColor
+																jcr:primaryType="nt:unstructured"
+																sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+																fieldLabel="Drop Down Text Color"
+																name="./branding-wizard/dropdownTextColor"/>
+                                                        </items>
+                                                    </dropDownMenu>
+                                                </items>
+                                            </header>                                            
+                                            <footer
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Footer Style Properties"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}false">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <footerBgColor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                        fieldLabel="Footer BG Color"
+                                                        name="./branding-wizard/footerBgColor"/>
+                                                    <footerTextColor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                        fieldLabel="Footer Text Color"
+                                                        name="./branding-wizard/footerTextColor"/>
+                                                    <footerLinkColor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                        fieldLabel="Footer Link Color"
+                                                        name="./branding-wizard/footerLinkColor"/>
+                                                    <footerLinkHoverColor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                        fieldLabel="Footer Link Hover Color"
+                                                        name="./branding-wizard/footerLinkHoverColor"/>
+                                                </items>
+                                            </footer>
+                                            <bodystyle
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Body Style Properties"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}false">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <bodyBgColor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                        fieldLabel="Body BG Color"
+                                                        name="./branding-wizard/bodyBgColor"/>
+                                                    <bodyTextColor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                        fieldLabel="Body Text Color"
+                                                        name="./branding-wizard/bodyTextColor"/>
+													<fontSizeBase
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldDescription="Default 18px"
+                                                        fieldLabel="Font Size Base"
+                                                        name="./branding-wizard/fontSizeBase"/>
+                                                </items>
+                                            </bodystyle>
+											<headers
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Heading Style Properties"
+                                                sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                                margin="{Boolean}false"
+                                                maximized="{Boolean}true"
+                                                multiple="{Boolean}true"
+                                                variant="quiet">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <headercolors
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Heading Colors"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <headerColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Header Color(h1-h6)"
+                                                                name="./branding-wizard/headerColor"/>
+                                                        </items>
+                                                    </headercolors>
+                                                    <headersize
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Heading Size"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <h1Size
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldDescription="Default 50px"
+                                                                fieldLabel="H1 Size"
+                                                                name="./branding-wizard/h1size"/>
+                                                            <h2Size
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldDescription="Default 40px"
+                                                                fieldLabel="H2 Size"
+                                                                name="./branding-wizard/h2size"/>
+                                                            <h3Size
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldDescription="Default 30px"
+                                                                fieldLabel="H3 Size"
+                                                                name="./branding-wizard/h3size"/>
+                                                            <h4Size
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldDescription="Default 22px"
+                                                                fieldLabel="H4 Size"
+                                                                name="./branding-wizard/h4size"/>
+                                                            <h5Size
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldDescription="Default 20px"
+                                                                fieldLabel="H5 Size"
+                                                                name="./branding-wizard/h5size"/>
+                                                            <h6Size
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                fieldDescription="Default 18px"
+                                                                fieldLabel="H6 Size"
+                                                                name="./branding-wizard/h6size"/>
+                                                        </items>
+                                                    </headersize>
+                                                </items>
+                                            </headers>
+                                            <accordian
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="CTA Style Properties"
+                                                sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                                margin="{Boolean}false"
+                                                maximized="{Boolean}true"
+                                                multiple="{Boolean}true"
+                                                variant="quiet">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <ctaPrimary
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Primary CTA Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <primaryButtonBgColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Primary Button BG Color"
+                                                                name="./branding-wizard/primaryButtonBgColor"/>
+                                                            <primaryButtonColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Primary Button Color"
+                                                                name="./branding-wizard/primaryButtonColor"/>
+                                                            <primaryButtonBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Primary Button Border Color"
+                                                                name="./branding-wizard/primaryButtonBorderColor"/>
+                                                            <primaryButtonHoverBGColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Primary Button Hover BG Color"
+                                                                name="./branding-wizard/primaryButtonHoverBGColor"/>
+                                                            <primaryButtonHoverColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Primary Button Hover Color"
+                                                                name="./branding-wizard/primaryButtonHoverColor"/>
+                                                            <primaryButtonHoverBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Primary Button Hover Border Color"
+                                                                name="./branding-wizard/primaryButtonHoverBorderColor"/>
+                                                        </items>
+                                                    </ctaPrimary>
+                                                    <ctaSecondary
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Secondary CTA Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <secondaryButtonBgColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Secondary Button BG Color"
+                                                                name="./branding-wizard/secondaryButtonBgColor"/>
+                                                            <secondaryButtonColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Secondary Button Color"
+                                                                name="./branding-wizard/secondaryButtonColor"/>
+                                                            <secondaryButtonBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Secondary Button Border Color"
+                                                                name="./branding-wizard/secondaryButtonBorderColor"/>
+                                                            <secondaryButtonHoverBGColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Secondary Button Hover BG Color"
+                                                                name="./branding-wizard/secondaryButtonHoverBGColor"/>
+                                                            <secondaryButtonHoverColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Secondary Button Hover Color"
+                                                                name="./branding-wizard/secondaryButtonHoverColor"/>
+                                                            <secondaryButtonHoverBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Secondary Button Hover Border Color"
+                                                                name="./branding-wizard/secondaryButtonHoverBorderColor"/>
+                                                        </items>
+                                                    </ctaSecondary>
+                                                    <ctaOutline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Outline CTA Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <outlineButtonBgColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline Button BG Color"
+                                                                name="./branding-wizard/outlineButtonBgColor"/>
+                                                            <outlineButtonColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline Button Color"
+                                                                name="./branding-wizard/outlineButtonColor"/>
+                                                            <outlineButtonBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline Button Border Color"
+                                                                name="./branding-wizard/outlineButtonBorderColor"/>
+                                                            <outlineButtonHoverBGColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline Button Hover BG Color"
+                                                                name="./branding-wizard/outlineButtonHoverBGColor"/>
+                                                            <outlineButtonHoverColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline Button Hover Color"
+                                                                name="./branding-wizard/outlineButtonHoverColor"/>
+                                                            <outlineButtonHoverBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline Button Hover Border Color"
+                                                                name="./branding-wizard/outlineButtonHoverBorderColor"/>
+                                                        </items>
+                                                    </ctaOutline>
+                                                    <ctaOutline2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Outline CTA2 Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <outlineButtonBgColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline2 Button BG Color"
+                                                                name="./branding-wizard/outline2ButtonBgColor"/>
+                                                            <outlineButtonColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline2 Button Color"
+                                                                name="./branding-wizard/outline2ButtonColor"/>
+                                                            <outlineButtonBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline2 Button Border Color"
+                                                                name="./branding-wizard/outline2ButtonBorderColor"/>
+                                                            <outlineButtonHoverBGColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline2 Button Hover BG Color"
+                                                                name="./branding-wizard/outline2ButtonHoverBGColor"/>
+                                                            <outlineButtonHoverColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline2 Button Hover Color"
+                                                                name="./branding-wizard/outline2ButtonHoverColor"/>
+                                                            <outlineButtonHoverBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Outline2 Button Hover Border Color"
+                                                                name="./branding-wizard/outline2ButtonHoverBorderColor"/>
+                                                        </items>
+                                                    </ctaOutline2>
+                                                    <globalTextLink
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Link Style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <globalTextLinkColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Link Color"
+                                                                name="./branding-wizard/globalTextLinkColor"/>
+                                                            <globalTextLinkHoverColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Link Hover Color"
+                                                                name="./branding-wizard/globalTextLinkHoverColor"/>
+                                                        </items>
+                                                    </globalTextLink>
+                                                </items>
+                                            </accordian>
+                                            <formFields
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Forms Style Properties"
+                                                sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                                margin="{Boolean}false"
+                                                maximized="{Boolean}true"
+                                                multiple="{Boolean}true"
+                                                variant="quiet">
+                                                <items jcr:primaryType="nt:unstructured">                                               
+                                                    <inputstyle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Input Field style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <textinputborder
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Input Text Border Color"
+                                                                name="./branding-wizard/textinputColorBorder"/> 
+															<formLabelColor
+		                                                        jcr:primaryType="nt:unstructured"
+		                                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+		                                                        fieldLabel="Form Label Color"
+		                                                        name="./branding-wizard/formLabelColor"/>	
+                                                        </items>
+                                                    </inputstyle>
+                                                    <checkboxstyle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Checkbox style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <checkboxborder
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Checkbox Border Color"
+                                                                name="./branding-wizard/checkBoxBorderColor"/>                                                           
+                                                            <checkBoxChecked
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Checkbox Checked Color"
+                                                                name="./branding-wizard/checkboxCheckedColor"/>
+                                                        </items>
+                                                    </checkboxstyle>
+                                                    <radiostyle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Radio style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <radioborder
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Radio Border Color"
+                                                                name="./branding-wizard/radioBorderColor"/>                                                           
+                                                            <radiochecked
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Radio Checked Color"
+                                                                name="./branding-wizard/radioCheckedColor"/>
+                                                        </items>
+                                                    </radiostyle>
+                                                    <calendarstyle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Calendar style Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <calendariconcolor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Calendar Icon Color"
+                                                                name="./branding-wizard/calendarIconColor"/>
+                                                            <calendartodaybgcolor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Calendar Today BG Color"
+                                                                name="./branding-wizard/calendarTodayBgColor"/>
+                                                            <calendardatehoverbg
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Calendar Date Hover BG Color"
+                                                                name="./branding-wizard/calendarDateHoverBgColor"/>
+                                                            <calendardatehovertextcolor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Calendar Date Hover Text Color"
+                                                                name="./branding-wizard/calendarDateHoverTextColor"/>
+                                                        </items>
+                                                    </calendarstyle>
+                                                </items>
+                                            </formFields>
+                                            <accordianmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Success/Error Style Properties"
+                                                sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                                margin="{Boolean}false"
+                                                maximized="{Boolean}true"
+                                                multiple="{Boolean}true"
+                                                variant="quiet">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <globalServerErrorMessage
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Global Server Error Message Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <errorWrapperBgColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Error Wrapper BG Color"
+                                                                name="./branding-wizard/errorWrapperBgColor"/>
+                                                            <errorTextColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Error Text Color"
+                                                                name="./branding-wizard/errorTextColor"/>
+                                                            <errorBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Error Border Color"
+                                                                name="./branding-wizard/errorBorderColor"/>
+                                                        </items>
+                                                    </globalServerErrorMessage>
+                                                    <globalServerSuccessMessage
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Global Server Success Message Properties"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <successWrapperBgColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Success Wrapper BG Color"
+                                                                name="./branding-wizard/successWrapperBgColor"/>
+                                                            <successTextColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Success Text Color"
+                                                                name="./branding-wizard/successTextColor"/>
+                                                            <successBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                                fieldLabel="Success Border Color"
+                                                                name="./branding-wizard/successBorderColor"/>
+                                                        </items>
+                                                    </globalServerSuccessMessage>
+                                                </items>
+                                            </accordianmessage>
+                                        </items>
+                                    </accordian>
+                                </items>
+</jcr:root>

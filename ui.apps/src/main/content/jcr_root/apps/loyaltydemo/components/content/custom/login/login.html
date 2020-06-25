@@ -1,0 +1,65 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Login Component" class="cq-placeholder"></div>
+
+<sly data-sly-use.loginModel="com.rnd.loyaltydemo.core.models.LoginModel"/>
+<sly data-sly-use.ctaUtil="/apps/loyaltydemo/components/content/custom/cta/cta-link-util.html"/>
+
+	<section class="login form__bg--color" data-postlogin-link="${loginModel.postLoginPath}">
+			
+            <div class="registerlogin__inner" data-generic-error="${loginModel.genericErrorMsg || 'Authentication failed.'}" data-password-error="${loginModel.pwdExpiredErrorMsg || 'Password expired.'}">
+            <div class="generic__error d-none">
+                    <div class="generic__error__inner">
+                        <i class="fa fa-exclamation"></i>
+                        <span>
+                            <p>${loginModel.genericErrorMsg || 'Authentication failed.'}</p>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="registerlogin__desc" data-sly-test=${loginModel.heading}>
+					${loginModel.heading @context='html'}
+                </div>
+                <div data-sly-unwrap="${wcmmode.disabled}" data-sly-resource="${'social-login' @ resourceType='loyaltydemo/components/content/custom/social-login'}"></div>
+
+                <div class="login__form generic__form--elements">
+                    <form id="login" class="login-form" action="${currentPage.path}.loginToken.json" method="POST">
+                        <div class="form-group">
+                            <label for="userName">${loginModel.usernameLabel || 'Username'}</label>
+                            <small class="form-text text-muted">
+    							<sly data-sly-test.ctaLabel="${loginModel.forgotUsernameLabel || 'Forgot Username?'}"/>
+    							<sly data-sly-test.ctaLink="${loginModel.forgotUsernameLink || '#'}"/>
+    							<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=ctaLabel, ctaLink=ctaLink}" ></sly>
+                            </small>
+                            <input type="text" class="form-control" id="userName" name="Username" data-error="${loginModel.usernameEmptyMsg || 'Please enter your username'}" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">${loginModel.passwordLabel || 'Password'}</label>
+                            <small class="form-text text-muted">
+                            	<sly data-sly-test.ctaLabel="${loginModel.forgotPasswordLabel || 'Forgot Password?'}"/>
+    							<sly data-sly-test.ctaLink="${loginModel.forgotPasswordLink || '#'}"/>
+    							<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=ctaLabel, ctaLink=ctaLink}" ></sly>
+                            </small>
+                            <input type="password" class="form-control" id="password" name="Password" data-error="${loginModel.passwordEmptyMsg || 'Please enter your password'}" >
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+								<input type="checkbox" id="rememberMe" name="rememberMe">
+								<span class="checkbox-custom circular"></span>
+								${loginModel.rememberMeLabel || 'Remember Me'}
+							</label>
+                        </div>
+                        <div class="generic__login__signupbtn">
+                            <button type="submit" class="btn ${(loginModel.logincta && loginModel.logincta.ctaType) || 'btn-primary'}">${(loginModel.logincta && loginModel.logincta.ctaLabel) || 'Login'}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+			<div class="generic__login__signup">
+                <p>${loginModel.registerText || "Don't have an account?"} 
+    				<sly data-sly-test.ctaClass="btn ${(loginModel.registercta && loginModel.registercta.ctaType) || 'btn-outline'}"/>
+    				<sly data-sly-test.ctaLabel="${(loginModel.registercta && loginModel.registercta.ctaLabel) || 'JOIN NOW'}"/>
+    				<sly data-sly-test.ctaLink="${loginModel.registerPath || '#'}"/>
+    				<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=ctaLabel, ctaLink=ctaLink, ctaClass=ctaClass}" ></sly>
+                </p>
+            </div>
+		</section>

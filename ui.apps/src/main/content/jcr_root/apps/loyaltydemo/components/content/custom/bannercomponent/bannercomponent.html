@@ -1,0 +1,25 @@
+<!--/*
+  Banner Component.
+*/-->
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Banner Component" class="cq-placeholder"></div>
+<sly data-sly-use.bannerModel="com.rnd.loyaltydemo.core.models.BannerComponentModel"/>
+
+<section class="banner-wrapper container">
+	<div class="banner hero">
+		<picture>
+			<source media="(max-width: 575px)" srcset="${properties.fileReferenceMob || properties.fileReference}">
+			<source media="(min-width: 576px) and (max-width: 991px)" srcset="${properties.fileReferenceTab || properties.fileReference}">
+			<img src="${properties.fileReference}" alt="${properties.altText}" class="" />
+		</picture>
+		<div class="container">
+			<div class="col-lg-6 col-sm-7 text-group-col-wrapper">
+				<div class="text-group-wrapper">
+					${properties.description @context='html'}
+					<sly data-sly-use.ctaUtil="/apps/loyaltydemo/components/content/custom/cta/cta-link-util.html">
+					    <sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=properties.ctaLabel, ctaLink=properties.linkPath, ctaClass='btn btn-primary'}" ></sly>
+					</sly>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

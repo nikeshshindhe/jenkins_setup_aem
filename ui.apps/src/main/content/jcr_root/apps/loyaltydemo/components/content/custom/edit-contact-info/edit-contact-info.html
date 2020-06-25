@@ -1,0 +1,61 @@
+<sly data-sly-use.formValidationPattern="/apps/loyaltydemo/components/content/custom/server-side-script/form-validation-patterns.js"/>
+<div data-sly-test="${wcmmode.edit}"
+	data-emptytext="Configure Edit Contact Info Component" class="cq-placeholder"></div>
+<section class="edit-contact-info">
+	<div class="edit-contact-info__inner" 
+	data-generic-error="${properties.genericErrorMsg || 'Contact Info Update Failed.'}" data-success-msg="${properties.successMsg || 'Contact Info Updated Successfully.'}">
+		<div class="generic__error d-none">
+                    <div class="generic__error__inner">
+                        <i class="fa fa-exclamation"></i>
+                        <span>
+							
+						</span>
+                    </div>
+                </div>
+
+		<div class="edit-contact-info__title">${properties.heading @context='html'}</div>
+		<div class="edit-contact-info__form generic__form--elements">
+			<form id="editContactInfo" class="edit-contact-info-form" action="${currentPage.path}.editProfile.json"
+				method="POST" data-disable="false">
+
+				<div class="form-group">
+					<label for="email">${properties.emailLabel || 'Email Id'}</label> <input type="text"
+						class="form-control" id="email" name="email" pattern="${formValidationPattern.email_pattern}" data-pattern-error="${properties.emailPatternErrorMsg || 'Invalid email address.'}"
+						data-error="${properties.emailReqErrorMsg || 'Please enter email address.'}" required>
+					<div class="help-block with-errors"></div>
+				</div>
+				<input type="hidden" id="EmailId" name="EmailId">
+				<input type="hidden" id="PhoneId" name="PhoneId">
+				<label for="phone">${properties.phoneLabel || 'Mobile Number'}</label>
+				<div class="form-row no-margin-d">
+					<div class="form-group  col-3 edit-contact-info__phoneNumber">
+						<select name="phoneCode" class="form-control" id="phoneCode"
+							data-error="${properties.countryCodeReqErrorMsg || 'Please select country code.'}">
+							
+						</select>
+					</div>
+					<div class="form-group col-9 edit-contact-info__phoneNumber">
+						<input type="tel" id="phone" placeholder="303-555-0870"
+							name="phone" data-error="${properties.phoneReqErrorMsg || 'Please enter mobile number.'}"
+							data-pattern-error="${properties.phonePatternErrorMsg || 'Invalid phone number.'}"
+							pattern="${formValidationPattern.phone_pattern}"
+							required>
+						<div class="help-block with-errors"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-lg-6 col-md-6" data-sly-test.displayCancel="${properties.cancelCtaLabel && properties.cancelCtaType}">
+						<div class="generic__login__signupbtn">
+							<button type="button" class="btn ${properties.cancelCtaType} cancel">${properties.cancelCtaLabel}</button>
+            </div>
+					</div>
+					<div class="form-group ${displayCancel ? 'col-lg-6 col-md-6' : 'col-lg-12 col-md-12'}">
+						<div class="generic__login__signupbtn">
+							<button type="submit" class="btn ${properties.updateCtaType  || 'btn-primary'}">${properties.updateCtaLabel || 'UPDATE'}</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

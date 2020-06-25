@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Header and Navigation"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+					<mainnav
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Main Navigation"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+									<headerLogo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Header Logo Image"
+                                        fileNameParameter="./headerLogoName"
+                                        fileReferenceParameter="./headerLogoRef"
+                                        mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/svg,image/tiff]"
+                                        multiple="{Boolean}false"
+                                        name="./headerLogo"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+									<headerAltText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Alternative Text for Header Logo"
+                                        fieldLabel="Header Alternative Text"
+                                        name="./headerAltText"/>
+                                    <navigationRoot
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Navigation Root"
+                                        name="./navigationRoot"
+                                        rootPath="/content"/>
+                                    <skipNavigationRoot
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+										checked="{Boolean}false"
+										name="./skipNavigationRoot"
+										fieldDescription="Exclude the navigation root in the resulting tree, include its descendants only."
+										text="Exclude navigation root"
+										value="true"/>
+									<structureDepth
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+										fieldDescription="Navigation Structure Depth"
+										fieldLabel="Navigation Structure Depth"
+										name="./structureDepth"
+										max = "2"/>
+                                </items>
+                            </column>
+                        </items>
+                    </mainnav>
+					<secondarynav
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Secondary Navigation"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+									<showSearch
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldLabel="Show Search?"
+										name="./showSearch" 
+										text="Show Search?"
+										value="true" >
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/loyaltydemo/display-options-source"/>
+									</showSearch>
+									<showCart
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldLabel="Show Cart?"
+										name="./showCart" 
+										text="Show Cart?"
+										value="true" >
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/loyaltydemo/display-options-source"/>
+									</showCart>
+									<showLanguage
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/select"
+										fieldLabel="Show Language?"
+										name="./showLanguage" 
+										text="Show Language?"
+										value="true" >
+										<datasource
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+											path="/etc/acs-commons/lists/loyaltydemo/display-options-source"/>
+									</showLanguage>
+									<languageList
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldDescription="Language List"
+                                                fieldLabel="Language List">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./languageList">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <languageLabel
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Language Label"
+                                                                    name="./ctaLabel"/>
+                                                                <languagePath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                    fieldLabel="Language Path"
+                                                                    name="./ctaLink"
+                                                                    rootPath="/content"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                    </languageList>
+									<additionalSecNavList
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldDescription="Additional Secondary Navigation List"
+                                                fieldLabel="Additional Secondary Navigation List">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./additionalSecNavList">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+																<navLabel
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Additional Navigation Label"
+                                                                    name="./ctaLabel"/>
+																<navIcon 
+																	jcr:primaryType="nt:unstructured"
+																	fieldLabel="Navigation Icon" name="./ctaNavIcon"
+																	sling:resourceType="acs-commons/components/authoring/graphiciconselect">
+																	<datasource jcr:primaryType="nt:unstructured"
+																	path="/etc/acs-commons/lists/font-awesome-icons"
+																	sling:resourceType="acs-commons/components/utilities/genericlist/datasource"/>
+																</navIcon>
+                                                                <navPath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                    fieldLabel="Navigation Path"
+                                                                    name="./ctaLink"
+                                                                    rootPath="/content"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                    </additionalSecNavList>
+                                </items>
+                            </column>
+                        </items>
+                    </secondarynav>
+					<usernav
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="User Navigation"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+									<loginLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Add Login Label"
+                                        fieldLabel="Login Label"
+                                        name="./loginLabel"/>
+									<registerLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Add Register Label"
+                                        fieldLabel="Register Label"
+                                        name="./registerLabel"/>
+									<loginAndRegisterDivider
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Add Login/Register Divider"
+                                        fieldLabel="Login/Register Divider"
+                                        name="./loginAndRegisterDivider"/>
+                                    <showBelowUserName
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Show below User Name"
+                                        fieldLabel="Show below User Name"
+                                        name="./showBelowUserName">
+                                        <items jcr:primaryType="nt:unstructured">
+                                        <hide
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Nothing"
+                                            value="1"/>
+                                        <show
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Available Points"
+                                            value="2"/>
+										<showInAuth
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Current Tier"
+                                            value="3"/>									
+										</items>
+                                    </showBelowUserName>
+									<userInfo jcr:primaryType="nt:unstructured"
+												sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+												fieldLabel="User Info" 
+												name="./userInfo"
+												useFixedInlineToolbar="{Boolean}true">
+												<rtePlugins jcr:primaryType="nt:unstructured"
+													sling:resourceSuperType="/apps/loyaltydemo/components/content/custom/rte/standardrteplugins/rteplugins" />
+												<uiSettings jcr:primaryType="nt:unstructured"
+													sling:resourceSuperType="/apps/loyaltydemo/components/content/custom/rte/standardrteplugins/uisettings" />
+									</userInfo>
+									<userNavLinks
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldDescription="User Nav Links"
+                                                fieldLabel="User Nav Links">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./userNavLinks">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+																<navIcon 
+																	jcr:primaryType="nt:unstructured"
+																	fieldLabel="Navigation Icon" name="./ctaNavIcon"
+																	sling:resourceType="acs-commons/components/authoring/graphiciconselect">
+																	<datasource jcr:primaryType="nt:unstructured"
+																	path="/etc/acs-commons/lists/font-awesome-icons"
+																	sling:resourceType="acs-commons/components/utilities/genericlist/datasource"/>
+																</navIcon>
+                                                                <navLabel
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Navigation Label"
+                                                                    name="./ctaLabel"/>
+                                                                <navPath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                    fieldLabel="Navigation Path"
+                                                                    name="./ctaLink"
+                                                                    rootPath="/content"/>
+																<navLinksdivider
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+																	checked="{Boolean}false"
+																	name="./ctaCheckBox"
+																	text="Divider"
+																	value="true"/>																
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                    </userNavLinks>
+									<logoutIcon 
+										jcr:primaryType="nt:unstructured"
+										fieldLabel="Logout Icon" name="./logoutIcon"
+										sling:resourceType="acs-commons/components/authoring/graphiciconselect">
+										<datasource jcr:primaryType="nt:unstructured"
+										path="/etc/acs-commons/lists/font-awesome-icons"
+										sling:resourceType="acs-commons/components/utilities/genericlist/datasource"/>
+									</logoutIcon>
+									<logoutLabel
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+										fieldLabel="Logout Label"
+										name="./logoutLabel"/>
+                                </items>
+                            </column>
+                        </items>
+                    </usernav>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

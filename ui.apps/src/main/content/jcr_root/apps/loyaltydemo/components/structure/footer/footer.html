@@ -1,0 +1,28 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Footer Component" class="cq-placeholder"></div>
+<sly data-sly-use.footerModel="com.rnd.loyaltydemo.core.models.FooterModel">
+    <section class="footer-component">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 align-right no-padding-m" data-sly-test.footerList="${footerModel.labellinks}">
+                    <ul class="list" data-sly-list="${footerList}">
+                        <li>
+                        	<sly data-sly-test.target="${item.newWindow ? '_blank' : '_self'}"/>
+                        	<sly data-sly-use.ctaUtil="/apps/loyaltydemo/components/content/custom/cta/cta-link-util.html">
+							    <sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=item.label, ctaLink=item.link,ctaTarget=target}" ></sly>
+							</sly>
+                        </li>
+                </ul>
+                </div>
+                <div class="${footerModel.optionalText ? 'col-md-3 col-lg-3 align-v-center-d align-h-center-m align-center-m left-col' : 'col-md-3 col-lg-3 align-v-center-d align-h-center-m align-center-m' }">
+				${footerModel.optionalText @context='html'}
+                </div>
+                <div class="col-md-9 col-md-9 align-right-d align-center-m ptd-40">
+                    <div class="imgLinkComponent" data-sly-test="${footerModel.logoUrl}">
+                        <a class="navbar-brand" href="${footerModel.logoLink}"><img src="${footerModel.logoUrl}" alt="${footerModel.altText}"></a>
+                    </div>
+                    <p data-sly-test="${footerModel.copyright}">${footerModel.copyright @context='html'}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</sly>

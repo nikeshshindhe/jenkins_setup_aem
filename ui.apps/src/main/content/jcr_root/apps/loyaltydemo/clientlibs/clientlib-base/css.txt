@@ -1,0 +1,6 @@
+#base=css
+bootstrap.min.css
+font-awesome.min.css
+bootstrap-datetimepicker.min.css
+bootstrap-datetimepicker-standalone.css
+selectric.css

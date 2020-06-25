@@ -1,0 +1,86 @@
+<sly data-sly-use.brandingProps="com.rnd.loyaltydemo.core.models.BrandingWizardPropertiesModel">
+</sly>
+<style>
+:root{
+--footer-bg:${brandingProps.footerBgColor @ context="styleToken" };
+--footer-text-color:${brandingProps.footerTextColor @ context="styleToken" };
+--footer-link-color:${brandingProps.footerLinkColor @ context="styleToken" };
+--footer-link-hover-color:${brandingProps.footerLinkHoverColor @ context="styleToken" };
+
+--main-nav-bg-color:${brandingProps.mainNavBgColor @ context="styleToken" };
+--main-nav-text-color:${brandingProps.mainNavTextColor @ context="styleToken" }; 
+--user-nav-bg-color:${brandingProps.userNavBgColor @ context="styleToken" };
+--user-nav-text-color:${brandingProps.userNavTextColor @ context="styleToken" };
+--hover-active-bg-color:${brandingProps.hoverActiveBGColor @ context="styleToken" };
+--hover-active-text-color:${brandingProps.hoverActiveTextColor @ context="styleToken" };
+--dropdown-bg-color:${brandingProps.dropdownBGColor @ context="styleToken" };
+--dropdown-text-color:${brandingProps.dropdownTextColor @ context="styleToken" };
+
+
+--headers-color:${brandingProps.headerColor @ context="styleToken" };
+--h1-size:${brandingProps.h1size || '50' @ context="styleToken"}px;
+--h2-size:${brandingProps.h2size || '40' @ context="styleToken" }px;
+--h3-size:${brandingProps.h3size || '30' @ context="styleToken" }px;
+--h4-size:${brandingProps.h4size || '22' @ context="styleToken" }px;
+--h5-size:${brandingProps.h5size || '20' @ context="styleToken" }px;
+--h6-size:${brandingProps.h6size || '18' @ context="styleToken" }px;
+
+--primary-btn-bg:${brandingProps.primaryButtonBgColor @ context="styleToken" };
+--primary-btn-color:${brandingProps.primaryButtonColor @ context="styleToken" };
+--primary-btn-border:${brandingProps.primaryButtonBorderColor @ context="styleToken" };
+--primary-btn-hover-bg:${brandingProps.primaryButtonHoverBGColor @ context="styleToken" };
+--primary-btn-hover-color:${brandingProps.primaryButtonHoverColor @ context="styleToken" };
+--primary-btn-hover-border:${brandingProps.primaryButtonHoverBorderColor @ context="styleToken" };
+
+--secondary-btn-bg:${brandingProps.secondaryButtonBgColor @ context="styleToken" };
+--secondary-btn-color:${brandingProps.secondaryButtonColor @ context="styleToken" };
+--secondary-btn-border:${brandingProps.secondaryButtonBorderColor @ context="styleToken" };
+--secondary-btn-hover-bg:${brandingProps.secondaryButtonHoverBGColor @ context="styleToken" };
+--secondary-btn-hover-color:${brandingProps.secondaryButtonHoverColor @ context="styleToken" };
+--secondary-btn-hover-border:${brandingProps.secondaryButtonHoverBorderColor @ context="styleToken" };
+
+--outline-btn-bg:${brandingProps.outlineButtonBgColor @ context="styleToken" };
+--outline-btn-color:${brandingProps.outlineButtonColor @ context="styleToken" };
+--outline-btn-border:${brandingProps.outlineButtonBorderColor @ context="styleToken" };
+--outline-btn-hover-bg:${brandingProps.outlineButtonHoverBGColor @ context="styleToken" };
+--outline-btn-hover-color:${brandingProps.outlineButtonHoverColor @ context="styleToken" };
+--outline-btn-hover-border:${brandingProps.outlineButtonHoverBorderColor @ context="styleToken" };
+
+--outline2-btn-bg:${brandingProps.outline2ButtonBgColor @ context="styleToken" };
+--outline2-btn-color:${brandingProps.outline2ButtonColor @ context="styleToken" };
+--outline2-btn-border:${brandingProps.outline2ButtonBorderColor @ context="styleToken" };
+--outline2-btn-hover-bg:${brandingProps.outline2ButtonHoverBGColor @ context="styleToken" };
+--outline2-btn-hover-color:${brandingProps.outline2ButtonHoverColor @ context="styleToken" };
+--outline2-btn-hover-border:${brandingProps.outline2ButtonHoverBorderColor @ context="styleToken" };
+
+--link-color:${brandingProps.globalTextLinkColor @ context="styleToken" };
+--link-hover-color:${brandingProps.globalTextLinkHoverColor @ context="styleToken" };
+
+--body-bg:${brandingProps.bodyBgColor @ context="styleToken" };
+--body-text-color:${brandingProps.bodyTextColor @ context="styleToken" };
+--font-size-base:${brandingProps.fontSizeBase || '14' @ context="styleToken" }px;
+
+--error-bg-color:${brandingProps.errorWrapperBgColor @ context="styleToken" };
+--error-text-color:${brandingProps.errorTextColor @ context="styleToken" };
+--error-border-color:${brandingProps.errorBorderColor @ context="styleToken" };
+
+--success-bg-color:${brandingProps.successWrapperBgColor @ context="styleToken" };
+--success-text-color:${brandingProps.successTextColor @ context="styleToken" };
+--success-border-color:${brandingProps.successBorderColor @ context="styleToken" };
+
+--text-input-label:${brandingProps.formLabelColor @ context="styleToken" };
+--text-input-border:${brandingProps.textinputColorBorder @ context="styleToken" };
+
+--checkbox-border-color:${brandingProps.checkBoxBorderColor  @ context="styleToken" };
+--checkbox-checked-color:${brandingProps.checkboxCheckedColor  @ context="styleToken" };
+
+--radio-border-color:${brandingProps.radioBorderColor @ context="styleToken" };
+--radio-checked-color:${brandingProps.radioCheckedColor @ context="styleToken" };
+
+--calendar-icon-color:${brandingProps.calendarIconColor @ context="styleToken" };
+--calendar-today-bg-color:${brandingProps.calendarTodayBgColor @ context="styleToken" };
+--calendar-date-hover-bg:${brandingProps.calendarDateHoverBgColor @ context="styleToken" };
+--calendar-date-hover-text-color:${brandingProps.calendarDateHoverTextColor @ context="styleToken" };
+
+}
+</style>

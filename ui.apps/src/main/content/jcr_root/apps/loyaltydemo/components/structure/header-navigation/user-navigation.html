@@ -1,0 +1,53 @@
+<template data-sly-test="${headerModel && userdata}" data-sly-template.userNavigation="${ @ headerModel, userdata}">
+<sly data-sly-use.ctaUtil="/apps/loyaltydemo/components/content/custom/cta/cta-link-util.html"/>
+	<sly data-sly-test.authCheck="${userdata.cookieFound ? true : false}" />
+	<div class="right-section">
+		<sly data-sly-test="${(headerModel.showCart == '2' || (authCheck && headerModel.showCart == '3') || (!authCheck && headerModel.showCart == '4'))}">
+		<sly data-sly-test.addCtaLabel="<i class='fa fa-shopping-cart'></i> <span class='right-section__shopping-cart--item-count'>0</span>"/>
+		<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=addCtaLabel, ctaLink=headerModel.cartPath, ctaClass='right-section__shopping-cart'}" ></sly>
+		</sly>
+		<div class="dropdown user-profile">
+			<sly data-sly-test="${!authCheck}">
+				<div class="user-profile__dropdown-toggle">
+					<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=headerModel.loginLabel, ctaLink=headerModel.loginLink, ctaClass='user-profile__dropdown-toggle--login-action signin-link'}" ></sly>
+					${(headerModel.loginLabel || headerModel.registerLabel) ? headerModel.loginAndRegisterDivider : ''}
+					<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=headerModel.registerLabel, ctaLink=headerModel.registerLink, ctaClass='user-profile__dropdown-toggle--login-action register-link'}" ></sly>
+
+				</div>
+			</sly>
+			<!-- add signed-in class next to dropdown-toggle for singed-in user -->
+			<sly data-sly-test="${authCheck}">
+				<button
+					class="btn btn-secondary dropdown-toggle user-profile__dropdown-toggle signed-in"
+					type="button" id="dropdownMenuButton" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					<span class="userFirstName">${userdata.userFirstName}</span><br>
+					<sly data-sly-test="${headerModel.showBelowUserName == '2'}"> <span class="userPoints">${userdata.userPoints}</span> <span class="userPointsTypeDesc">${userdata.userPointsTypeDesc}</span> </sly>
+					<sly data-sly-test="${headerModel.showBelowUserName == '3'}"> <span class="userTier">${userdata.userTier}</span>
+					</sly>
+					<!-- below icon is common for both -->
+					<i class="fa fa-angle-down"></i>
+				</button>
+			</sly>
+			<div
+				class="dropdown-menu user-profile__dropdown-menu dropdown-menu-right"
+				aria-labelledby="dropdownMenuButton" data-sly-test="${authCheck}">
+				<div class="user-profile__dropdown-menu-container">
+				    <sly data-sly-test.userInfo="${headerModel.userInfo}">
+						<div class="user-info">
+							${userInfo @ context='html'}
+						</div>
+						<div class="dropdown-divider"></div>
+					</sly>
+					<sly data-sly-test.userNavList="${headerModel.userNavLinks}" data-sly-list.userNavLinksList="${userNavList}">
+						<sly data-sly-test.addCtaLabel="<i class='${userNavLinksList.ctaNavIcon}'></i>${userNavLinksList.ctaLabel}"/>
+						<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=addCtaLabel, ctaLink=userNavLinksList.ctaLink, ctaClass='dropdown-item'}" ></sly>
+					</sly>
+					<div class="dropdown-divider"></div>
+					<sly data-sly-test.addCtaLabel="<i class='${headerModel.logoutIcon}'></i>${headerModel.logoutLabel || 'Sign-out'}"/>
+					<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=addCtaLabel, ctaLink=headerModel.signoutPath, ctaClass='dropdown-item signout-link'}" ></sly>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

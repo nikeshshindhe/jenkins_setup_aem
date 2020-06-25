@@ -1,0 +1,27 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Modal Popup Component" class="cq-placeholder"></div>
+
+<sly data-sly-test.fragmentPath="${properties.modalContentType}">
+	<sly data-sly-test.modalId="${properties.modalId}"/>	
+	<p data-sly-test="${wcmmode.edit}">Modal ID : #${modalId}</p>
+	<div class="modal fade" id="${modalId}" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel" aria-hidden="true">
+	  <div class="modal-dialog ${properties.modalSize || 'modal-xl'} ${properties.modalContentType}" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header" data-sly-test="${properties.modalContentType == 'text-content'}">
+			 <h5 class="modal-title" id="popupModalLabel"  data-sly-test.title="${properties.title}">${title}</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+			<sly data-sly-test="${properties.modalContentType == 'experience-fragment' && properties.fragmentPath}">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<sly data-sly-resource="${properties.fragmentPath @ wcmmode='disabled'}/jcr:content/root"/>
+			</sly>
+	      	<sly data-sly-test="${properties.modalContentType == 'text-content' && properties.text}">${properties.text @ context='html'}</sly>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</sly>

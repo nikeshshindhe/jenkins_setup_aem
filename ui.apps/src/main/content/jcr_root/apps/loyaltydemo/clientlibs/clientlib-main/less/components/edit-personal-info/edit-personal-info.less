@@ -1,0 +1,99 @@
+// profile-information specific styles here
+@import "../../variables/variables";
+
+.profile-information {
+}
+.help-block.with-errors{
+    width:100%;
+    color:@error-text-color;
+    font-size: @font-size-base;
+    margin-top:10px;
+    margin-bottom: 0;
+}
+.has-error .form-control, .has-danger .form-control{
+    border:solid 1px @error-text-color !important;
+}
+.profileInfo__inner{
+    position: relative;
+    padding:105px 105px 0 105px;
+    @media @tablet-portrait {
+        padding-left:30px;
+        padding-right:30px;
+    }
+    @media @mobile {
+        padding-left:30px;
+        padding-right:30px;
+    }
+}
+
+.generic__form--elements .gender-style{
+    padding-left: 20px;
+    padding-top: 10px;
+
+    label{
+        font-weight: normal;
+    }
+}
+.gender-group{
+    >label{
+        padding-left: 20px;
+    }
+    .form-check{
+        margin-bottom: 14px;
+    }
+
+    &.has-error.has-danger{
+        [type="radio"]:not(:checked) + label:before{
+            border:solid 1px @radio-error-border-color;
+        }
+    }
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label{
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    line-height: 25px;
+    display: inline-block;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid @radio-border-color;
+    border-radius: 100%;
+    background:@white-color;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: @radio-checked-color;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}

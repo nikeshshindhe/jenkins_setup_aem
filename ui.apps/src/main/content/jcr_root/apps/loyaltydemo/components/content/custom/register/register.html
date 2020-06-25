@@ -1,0 +1,88 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Register Component" class="cq-placeholder"></div>
+<sly data-sly-use.registerModel="com.rnd.loyaltydemo.core.models.RegisterModel"></sly>
+        <section class="register form__bg--color">
+
+            <div class="registerlogin__inner" data-generic-error="${registerModel.genericErrorMsg}">
+            
+                <div class="generic__error d-none">
+                    <div class="generic__error__inner">
+                        <i class="fa fa-exclamation"></i>
+                        <span>
+                            <p>${registerModel.genericErrorMsg}</p>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="registerlogin__desc" data-sly-test="${registerModel.heading}">
+                    ${registerModel.heading @context="html"}
+                </div>
+                <div data-sly-unwrap="${wcmmode.disabled}" data-sly-resource="${'social-login' @ resourceType='loyaltydemo/components/content/custom/social-login'}"></div>
+                <div class="register__form generic__form--elements">
+                    <form id="register" class="register-form" action="${currentPage.path}.register.json" method="POST">
+                    
+                        <div class="form-group" data-sly-test="${registerModel.showAccountNumber}">
+                            <label for="accountNo">${registerModel.accountNumberLabel}</label>
+                            <input type="text" class="form-control" id="accountNo" name="CreditCardNumber" data-error="${registerModel.accNumReqErrorMsg}" >
+                        </div>
+                        <div class="form-group">
+                            <label for="fname">${registerModel.firstNameLabel}</label>
+                            <input type="text" class="form-control" id="fname" name="FirstName" data-error="${registerModel.fnameReqErrorMsg}">
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">${registerModel.lastNameLabel}</label>
+                            <input type="text" class="form-control" id="lname" name="LastName" data-error="${registerModel.lnameReqErrorMsg}" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">${registerModel.emailLabel}</label>
+                            <input type="email" class="form-control" id="email" name="EmailAddress" data-error="${registerModel.emailReqErrorMsg}" data-pattern="${registerModel.emailPatternErrorMsg}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userName">${registerModel.usernameLabel}</label>
+                            <input type="text" class="form-control" id="userName" name="Username" data-error="${registerModel.usernameReqErrorMsg}" data-pattern="${properties.usernamePatternErrorMsg || 'Invalid Username.'}" data-servlet-path="${currentPage.path}.verifyUsername.json">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">${registerModel.passwordLabel}</label>
+                            <input type="password" class="form-control" id="password" name="Password" aria-describedby="passwordInfo" data-error="${registerModel.pwdReqErrorMsg}" data-pattern="${registerModel.pwdPatternErrorMsg}">
+                            <small id="passwordInfo" class="form-text text-muted" data-sly-test="${registerModel.passwordHint}">	
+                            <span> ${registerModel.passwordHint @context="html"}</span></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">${registerModel.confirmPwdLabel}</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" data-error="${registerModel.confirmPwdReqErrorMsg}" data-pattern="${registerModel.confirmPwdMismatchErrorMsg}">
+                        </div>
+
+                        <div class="generic__login__signupbtn" >
+                            <button type="submit" class="btn ${registerModel.registerModelCTA && registerModel.registerModelCTA.ctaType || 'btn-primary'}">${registerModel.registerModelCTA.ctaLabel || 'REGISTER'}</button>
+                        </div>
+                    </form>
+                </div>
+                <sly data-sly-use.ctaUtil="/apps/loyaltydemo/components/content/custom/cta/cta-link-util.html"/>
+                <div class="generic__login__signup" >
+                   <p>${registerModel.loginText} 
+                        <sly data-sly-test.ctaClass="btn ${registerModel.switchToLoginModelCTA && registerModel.switchToLoginModelCTA.ctaType || 'btn-outline'}"/>
+                        <sly data-sly-test.ctaLabel="${registerModel.switchToLoginModelCTA.ctaLabel || 'SIGNIN'}"/>
+                        <sly data-sly-test.ctaLink="${registerModel.loginPagePath || '#'}"/>
+                        <sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=ctaLabel, ctaLink=ctaLink, ctaClass=ctaClass}" ></sly>
+                    </p>
+                </div>
+            </div>
+
+            <div class="register__success d-none">
+
+                <div class="register__successmsg" data-sly-test="${registerModel.completionHeading}">
+                    ${registerModel.completionHeading @context="html"}
+                </div>
+                <div class="generic__login__signupbtn">
+                	 <sly data-sly-test.ctaClass="regiser-redirect btn ${registerModel.completionModelCTA && registerModel.completionModelCTA.ctaType || 'btn-primary'}"/>
+                     <sly data-sly-test.ctaLabel="${registerModel.completionModelCTA.ctaLabel || 'CONTINUE'}"/>
+                     <sly data-sly-test.ctaLink="${registerModel.postLoginPath}"/>
+                     <sly data-sly-use.ctaAttributes="${'register.js' @link=registerModel.loginPagePath}"/>
+                     <sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=ctaLabel, ctaLink=ctaLink, ctaClass=ctaClass, ctaAttributes=ctaAttributes}" ></sly>
+                </div>
+            </div>
+           
+        </section>

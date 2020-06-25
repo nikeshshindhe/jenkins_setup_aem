@@ -1,0 +1,59 @@
+// profile-info specific styles here
+@import "../../variables/variables";
+
+@profile-list-border:#707070;
+@profile-list-bg:#F6F4EE;
+@success-msg-color:#095827;
+
+.profile-info {
+}
+.profile__title {
+
+    h3{
+        text-align: left;
+        margin-bottom: 20px;
+        font-weight: bold;
+        // color:@body-text-color;
+    }
+}
+.profile__list{
+    list-style-type: none;
+    border:solid 1px @profile-list-border;
+    margin-bottom: 40px;
+}
+.profile__list__item{
+    color:@body-text-color;
+    background: @profile-list-bg;
+    padding:22px 40px;
+    border-bottom:solid 2px @white-color;
+    display:flex;
+    justify-content: space-between;
+    font-weight: 500;
+
+    @media @mobile {
+        padding:22px 20px;
+    }
+}
+.profile__edit {
+    a{
+        text-decoration: underline;
+        display:inline-block;
+        margin-left:38px;
+
+        @media @mobile {
+           margin-left:20px;
+        }
+    }
+}
+.profile__successmsg{
+    display: inline-block;
+    color:@success-msg-color;
+    font-weight: bold;
+    margin-left:20px;
+
+    @media @mobile {
+        margin-left:0px;
+        margin-top:5px;
+        width: 100%;
+    }
+}

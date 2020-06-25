@@ -1,0 +1,85 @@
+<template data-sly-test="${headerModel && userdata}" data-sly-template.mainNavigation="${ @ headerModel,userdata}">
+<sly data-sly-use.ctaUtil="/apps/loyaltydemo/components/content/custom/cta/cta-link-util.html"/>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+		<div class="navbar-collapse-container">
+			<div
+				class="navbar-collapse-header navbar-collapse-container__navbar-collapse-header d-flex d-lg-none">
+				<h6>Menu</h6>
+				<i class="fa fa-times navbar-collapse-container__navbar-collapse-header--close"></i>
+			</div>
+			<ul
+				class="navbar-nav navbar-collapse-container__navbar-nav mr-auto mt-2 mt-lg-0"
+				data-sly-test.mainNav="${headerModel.MainNavigationList}"
+				data-sly-list.items="${mainNav}">
+				<sly data-sly-test.child="${items.children}">
+				<li
+					class="nav-item navbar-collapse-container__nav-item dropdown navbar-collapse-container__dropdown ${items.isCurrentPage ? 'active' : ''}">
+					<a
+					class="nav-link navbar-collapse-container__nav-item--nav-link dropdown-toggle navbar-collapse-container__dropdown--dropdown-toggle"
+					href="${items.linkUrl}" id="navbarDropdown" role="button"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${items.linkName}</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<div class="dropdown-item d-lg-none d-block">
+							<h6><i class="fa fa-angle-left"></i>
+							<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=items.linkName, ctaLink=items.linkUrl}" ></sly>
+							</h6>
+						</div>
+						<sly data-sly-list.childPage="${child}">
+						<sly data-sly-test.addCtaClass="dropdown-item ${items.isCurrentPage ? 'active' : ''}"/>
+						<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=childPage.linkName, ctaLink=childPage.linkUrl, ctaClass=addCtaClass}" ></sly>
+						</sly>
+					</div>
+				</li>
+				</sly>
+				<sly data-sly-test="${!child}">
+				<li class="nav-item navbar-collapse-container__nav-item  ${items.isCurrentPage ? 'active' : ''}">
+				<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=items.linkName, ctaLink=items.linkUrl, ctaClass='nav-link navbar-collapse-container__nav-item--nav-link'}" ></sly>
+				</li>
+				</sly>
+			</ul>
+			<sly data-sly-test.authCheck="${userdata.cookieFound ? true : false}" />
+			<form
+				class="form-inline my-2 my-lg-0 navbar-collapse-container__search-form"
+				data-sly-test="${(headerModel.showSearch == '2' || (authCheck && headerModel.showSearch == '3') || (!authCheck && headerModel.showSearch == '4'))}">
+				<a href="#open"
+					class="navbar-collapse-container__search-form--search-open"><i
+					class="fa fa-search"></i></a> <input
+					class="form-control mr-sm-2 navbar-collapse-container__search-form--search-input"
+					type="search" placeholder="" aria-label="Search"> <a
+					href="${headerModel.searchPath}" id="headerSearch"
+					class="navbar-collapse-container__search-form--search-action"><i
+					class="fa fa-search"></i></a>
+			</form>
+			<div class="dropdown navbar-collapse-container__language"
+				data-sly-test="${headerModel.languageList && (headerModel.showLanguage == '2' || (authCheck && headerModel.showLanguage == '3') || (!authCheck && headerModel.showLanguage == '4'))}">
+				<button
+					class="btn btn-secondary dropdown-toggle navbar-collapse-container__language--dropdown-toggle"
+					type="button" id="dropdownMenuButton" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-globe"></i> <span class="d-inline d-lg-none">Language</span>
+					<i class="fa fa-angle-right d-inline d-lg-none"></i> <i
+						class="fa fa-angle-down d-none d-lg-block"></i>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<div class="dropdown-item d-lg-none d-block">
+						<h6>
+							<i class="fa fa-angle-left"></i> <a class="" href="#">Language</a>
+						</h6>
+					</div>
+					<sly data-sly-list.languageList="${headerModel.languageList}">
+						<sly data-sly-test.addCtaClass="dropdown-item ${items.isActive ? 'active' : ''}"/>
+						<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=languageList.ctaLabel, ctaLink=languageList.ctaLink, ctaClass=addCtaClass}" ></sly>
+					</sly>
+				</div>
+			</div>
+			<ul class="navbar-collapse-container__additional-items"
+				data-sly-test.additionalNavList="${headerModel.additionalSecNavList}"
+				data-sly-list.addSecNavList="${additionalNavList}">
+				<li class="navbar-collapse-container__additional-item">
+				<sly data-sly-test.addCtaLabel="<i class='${addSecNavList.ctaNavIcon}'></i> <span	class='d-block d-lg-none'>${addSecNavList.ctaLabel}</span>"/>
+				<sly data-sly-call="${ctaUtil.ctaLinkTemplate @ ctaLabel=addCtaLabel, ctaLink=addSecNavList.ctaLink, ctaClass='navbar-collapse-container__additional-item--item-link'}" ></sly>
+				</li>
+			</ul>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,42 @@
+<div data-sly-use.checkRunmode="${'/apps/loyaltydemo/components/content/custom/server-side-script/check-runmode.js' @ runmode='publish'}"/>
+<div data-sly-test="${!properties.heading && (wcmmode.edit || wcmmode.design)}" data-emptytext="Configure Header & Navigation Component" class="cq-placeholder"></div>
+<sly data-sly-use.profileModel="com.rnd.loyaltydemo.core.models.LoyaltyProfileDetailsModel" />
+<sly data-sly-test.redirect="${checkRunmode.hasRunmode && !profileModel.loggedIn && pageProperties.authenticatedPage}">
+   <script type="text/javascript">
+   	  sessionStorage.setItem("${profileModel.cookiePrefix @ context = 'scriptString'}redirectOnSuccessLogin", window.location.pathname);
+      window.location.href = '${inheritedPageProperties.loginPagePath @ context = "scriptString"}' + '.html'; 
+   </script>
+</sly>
+<input type="hidden" name="cookiePrefix" id="cookiePrefix" value="${profileModel.cookiePrefix}">
+<input type="hidden" name="localeCode" id="localeCode" value="${profileModel.localeCode}"> 
+<sly data-sly-test = "${!redirect}">
+	<sly data-sly-use.headerModel="com.rnd.loyaltydemo.core.models.HeaderModel"/>
+	<div class="row">
+	   <header>
+	      <div class="container">
+	         <div class="row">
+	            <section class="header">
+	               <nav class="navbar navbar-expand-lg">
+	                  <div class="navbar-wrapper-custom">
+	                     <button class="navbar-toggler navbar-wrapper-custom__navbar-toggler" type="button" data-toggle="collapse"
+	                        data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+	                        aria-label="Toggle navigation">
+	                     <span class="navbar-wrapper-custom__navbar-toggler--navbar-toggler-icon navbar-toggler-icon"></span>
+	                     </button>
+	                     <a class="navbar-brand" href="${headerModel.homePagePath}"><img src="${properties.headerLogoRef}" alt="${headerModel.headerAltText}"></a>
+	                  </div>
+	                  <sly data-sly-use.userdata="/apps/loyaltydemo/components/structure/userdata/userdata.js" />
+	                  
+	                  <sly data-sly-use.mainNavigationTemplate="main-navigation.html">
+	                     <sly data-sly-call="${mainNavigationTemplate.mainNavigation @ headerModel=headerModel, userdata=userdata}" ></sly>
+	                  </sly>
+	                  <sly data-sly-use.userNavigationTemplate="user-navigation.html">
+	                     <sly data-sly-call="${userNavigationTemplate.userNavigation @ headerModel=headerModel, userdata=userdata}" ></sly>
+	                  </sly>
+	               </nav>
+	            </section>
+	         </div>
+	      </div>
+	   </header>
+	</div>
+</sly>

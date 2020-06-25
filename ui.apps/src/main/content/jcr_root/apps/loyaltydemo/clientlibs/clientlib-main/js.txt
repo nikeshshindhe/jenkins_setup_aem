@@ -1,0 +1,16 @@
+#base=js
+global.js
+styles.js
+utility.js
+
+#base=js/components
+header/header.js
+register/register.js
+login/login.js
+forgot-username/forgot-username.js
+forgot-password/forgot-password.js
+footer/footer.js
+edit-personal-info/edit-personal-info.js
+change-password/change-password.js
+edit-gamer-info/edit-gamer-info.js
+edit-contact-info/edit-contact-info.js

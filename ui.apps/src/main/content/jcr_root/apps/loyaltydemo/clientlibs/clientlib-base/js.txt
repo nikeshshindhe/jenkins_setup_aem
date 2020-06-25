@@ -1,0 +1,8 @@
+#base=js
+jquery.min.js
+moment.min.js
+bootstrap.bundle.min.js
+jquery.validate.min.js
+bootstrap-datetimepicker.js
+validator.js
+jquery.selectric.js

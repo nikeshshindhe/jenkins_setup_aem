@@ -1,0 +1,104 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Edit Personal Info Component" class="cq-placeholder"></div>
+        <section class="profile-information">
+            <div class="profileInfo__inner" data-generic-error="${properties.genericErrorMsg ||'Profile Update Failed'}"
+            data-success-msg="${properties.successMsg ||'Personal Info  Updated Successfully'}">
+                <div class="generic__error d-none">
+                    <div class="generic__error__inner">
+                        <i class="fa fa-exclamation"></i>
+                        <span>
+							<p>${properties.genericErrorMsg ||'Profile Update Failed'}</p>
+						</span>
+                    </div>
+                </div>
+
+                <div class="registerlogin__desc" data-sly-test="${properties.heading}">
+                    ${properties.heading @context="html"}
+                </div>
+
+                <div class="profileinfo__form generic__form--elements">
+                    <form id="profileInfo" class="profile-form" action="${currentPage.path}.editProfile.json" data-disable="false" method="POST" role="form" novalidate="true">
+                        <div class="form-group">
+                            <label for="fname">${properties.firstNameLabel || 'First Name'}</label>
+                            <input type="text" class="form-control" id="fname" name="FirstName" required data-error="${properties.fnameReqErrorMsg || 'Please enter first name'}" value="">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">${properties.lastNameLabel || 'Last Name'}</label>
+                            <input type="text" class="form-control" id="lname" name="LastName" required data-error="${properties.lnameReqErrorMsg || 'Please enter last name'}" value="">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">${properties.countryLabel || 'Country'}</label>
+                            <select name="CountryCode" class="form-control" id="country" data-servlet-path="${inheritedPageProperties.homePagePath || currentPage.path}.countries.json" data-value-country="" required data-error="${properties.countryReqErrorMsg || 'Please enter country'}">
+								<option value="" ></option>
+                            </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address1">${properties.addressLabel1 || 'Address 1'}</label>
+                            <input name="AddressLine1" type="text" id="address1" class="form-control" required data-error="${properties.addressReqErrorMsg || 'Please enter address'}" value="" >
+                            <input name="AddressId" type="hidden" id="addressId" value="" >
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address2">${properties.addressLabel2 || 'Address 2'}</label>
+                            <input name="AddressLine2" type="text" id="address2" class="form-control" value="${profileModel.properties.addressLine2}" >
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">${properties.cityLabel || 'City'}</label>
+                            <input type="text" class="form-control" id="city" name="City" required data-error="${properties.cityReqErrorMsg || 'Please enter city'}" value="">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="state">${properties.stateLabel || 'State'}</label>
+                            <select name="StateCode" class="form-control" id="state" data-servlet-path="${inheritedPageProperties.homePagePath || currentPage.path}.states.json" data-value-state="" required data-error="${properties.stateReqErrorMsg || 'Please enter state'}">
+								<option value="" ></option>
+                            </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipcode">${properties.postalCodeLabel || 'ZIP'}</label>
+                            <input type="text" class="form-control" id="zipcode" name="PostalCode" required data-error="${properties.postalCodeReqErrorMsg || 'Please enter zip code'}" value="">
+                            <div class="help-block with-errors"></div>
+                        </div>               
+                        <div class="form-row">
+                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                <label for="dob">${properties.dobLabel || 'Date of Birth'}</label>
+                                <div class='input-group date date-picker'>
+                                    <input type='text' class="form-control" id="dob" name="BirthDate" required data-error="${properties.dobReqErrorMsg || 'Please enter date of birth'}" value="">
+
+                                    <span class="input-group-addon">
+										<span class="fa fa-calendar"></span>
+                                    </span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                              <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                            <label for="gender">${properties.genderLabel || 'Gender'}</label>
+                            <select name="Gender" class="form-control" id="gender" data-servlet-path="${inheritedPageProperties.homePagePath ||currentPage.path}.genders.json" data-value-gender="" required data-error="${properties.genderReqErrorMsg || 'Please enter gender'}">
+								<option value="" ></option>
+                            </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        </div>
+                        <div class="form-row">
+                        
+                            <div class="form-group col-lg-6 col-md-6" data-sly-test.displayCancel="${properties.cancelCtaLabel && properties.cancelCtaType}" >
+                                <div class="generic__login__signupbtn">
+                                    <button type="button" class="btn ${properties.cancelCtaType} cancel">${properties.cancelCtaLabel}</button>
+                                </div>
+                            </div>
+                            <div  class="form-group ${displayCancel ? 'col-lg-6 col-md-6' : 'col-lg-12 col-md-12'}">
+                                <div class="generic__login__signupbtn">
+                                    <button type="submit" class="btn ${properties.updateCtaType || 'btn-primary'}">${properties.updateCtaLabel || 'Update'}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>

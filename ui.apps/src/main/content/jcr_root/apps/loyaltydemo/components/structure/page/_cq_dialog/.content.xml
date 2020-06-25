@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <branding
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Site Branding"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<brandingColors
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/include"
+										margin="{Boolean}true"
+										path="loyaltydemo/components/structure/page/branding-colors"/>
+								</items>
+                            </column>
+                        </items>
+                    </branding>
+                    <customSiteDefaults
+                        cq:showOnCreate="{Boolean}true"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Custom Site Defaults"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <homePagePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Home Page Path"
+                                        name="./homePagePath"
+                                        rootPath="/content/"/>
+                                    <loginPagePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Login Page Path"
+                                        name="./loginPagePath"
+                                        rootPath="/content/"/>
+                                    <registerPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Register Path"
+                                        name="./registerPath"
+                                        rootPath="/content/"/>
+                                    <postLoginPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Post login Landing Page Path"
+                                        name="./postLoginPath"
+                                        rootPath="/content/"/>
+                                    <searchPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Search Path"
+                                        name="./searchPath"
+                                        rootPath="/content/"/>
+                                    <cartPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Cart Path"
+                                        name="./cartPath"
+                                        rootPath="/content/"/>
+                                    <signoutPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Sign Out Path"
+                                        name="./signoutPath"
+                                        rootPath="/content/"/>
+                                </items>
+                            </column>
+                        </items>
+                    </customSiteDefaults>
+                    <customPageDefaults
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Custom Page Defaults"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <displayInNavigation
+                                                jcr:primaryType="nt:unstructured"
+												cq:showOnCreate="{Boolean}true"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Display in Navigation?"
+                                                name="./displayInNavigation"
+                                                text="Component Display"
+                                                value="true">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                    path="/etc/acs-commons/lists/loyaltydemo/display-options-source"/>
+                                            </displayInNavigation>
+                                            <authentication
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Authenticated only page?"
+                                                name="./authenticatedPage"
+                                                text="Is Authenticated Page?"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                        </items>
+                                    </field>
+                                </items>
+                            </column>
+                        </items>
+                    </customPageDefaults>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,50 @@
+<div data-sly-test="${wcmmode.edit}"
+	data-emptytext="Configure Edit Gamer Info Component"
+	class="cq-placeholder"></div>
+<section class="edit-gamer-info">
+	<div class="edit-gamer-info__inner"
+		data-generic-error="${properties.genericErrorMsg || 'Gamer Info Update Failed.'}" data-success-msg="${properties.successMsg || 'Gamer Info Updated Successfully.'}">
+           <div class="generic__error d-none">
+                    <div class="generic__error__inner">
+                        <i class="fa fa-exclamation"></i>
+                        <span>
+
+						</span>
+                    </div>
+                </div>
+
+		<div class="edit-gamer-info__title">${properties.heading @context='html'}</div>
+		<div class="edit-gamer-info__form generic__form--elements">
+			<form id="editgamertInfo" class="edit-gamer-info-form" action="${currentPage.path}.updateGamerAlias.json" method="POST" data-disable="false">
+				<div class="form-row">
+					<div class="form-group col-md-4 gamer-image">
+						<img src="/etc.clientlibs/loyaltydemo/clientlibs/clientlib-main/resources/images/img_avatar.png" alt="Avatar" class="avatar"> <a href="#">${properties.gamerAvatarLabel || 'Edit Gamer Avatar'}</a>
+					</div>
+					<div class="form-group col-md-8 gamer-content">
+						<div class="form-group">
+							<label for="name">${properties.gamerNameLabel || 'Gamer Name'}</label> 
+							<input type="text" class="form-control" id="name" name="name" required
+								data-error="${properties.gamerNameReqErrorMsg || 'Please enter gamer name.'}"
+								>
+                                 <div class="help-block with-errors"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-lg-6 col-md-6" data-sly-test.displayCancel="${properties.cancelCtaLabel && properties.cancelCtaType}">
+						<div class="generic__login__signupbtn">
+							<button type="button"
+								class="btn ${properties.cancelCtaType} cancel">${properties.cancelCtaLabel}</button>
+						</div>
+					</div>
+					<div class="form-group ${displayCancel ? 'col-lg-6 col-md-6' : 'col-lg-12 col-md-12'}">
+						<div class="generic__login__signupbtn">
+							<button type="submit"
+								class="btn ${properties.updateCtaType || 'btn-primary'}">${properties.updateCtaLabel || 'UPDATE'}</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

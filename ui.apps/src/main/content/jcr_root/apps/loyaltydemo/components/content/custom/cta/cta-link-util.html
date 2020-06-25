@@ -1,0 +1,12 @@
+<!--
+  CTA Link Template.
+-->
+<template data-sly-test="${ctaLabel && ctaLink}" data-sly-template.ctaLinkTemplate="${@ ctaLabel, ctaLink, ctaClass,ctaTarget,ctaAttributes}">
+  <sly data-sly-use.ctaHandler="${'/apps/loyaltydemo/components/content/custom/cta/cta-handler.js' @ctaLink=ctaLink}"/>
+  <sly data-sly-test.isModalLink="${ctaHandler.isModalLink}">
+      <a href="#" class="${ctaClass}" data-toggle="modal" data-target="${ctaLink}" data-sly-attribute="${ctaAttributes}">${ctaLabel @context='html'}</a>
+  </sly>
+  <sly data-sly-test="${!isModalLink}">
+      <a class="${ctaClass}" href = "${ctaHandler.convertedPath}" target="${ctaTarget}" data-sly-attribute="${ctaAttributes}" >${ctaLabel @context='html'}</a>
+  </sly>
+</template>

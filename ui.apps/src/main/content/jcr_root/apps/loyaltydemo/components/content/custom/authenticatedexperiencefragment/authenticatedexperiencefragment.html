@@ -1,0 +1,10 @@
+<div data-sly-test="${wcmmode.edit}" data-emptytext="Configure Authenticated Experience Fragment Component" class="cq-placeholder"></div>
+
+<sly data-sly-use.checkAuth="com.rnd.loyaltydemo.core.models.LoyaltyProfileCookiesModel"/>
+
+<sly data-sly-test.fragmentPath="${(checkAuth.loggedIn) ? properties.authFragment : properties.anonymousFragment}">
+
+<sly data-sly-test="${fragmentPath}" data-sly-resource="${fragmentPath @ wcmmode='disabled'}/jcr:content/root"></sly> 
+</sly>
+
+
